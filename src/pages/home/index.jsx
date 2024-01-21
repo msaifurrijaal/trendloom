@@ -37,6 +37,7 @@ const HomePage = () => {
         title="Discover NEW Arrivals"
         tagline="Recently added shirts!"
         products={newProducts}
+        classname="container pt-12 pb-2 text-center"
       />
       <div className="container w-full px-4 flex flex-wrap justify-center lg:mt-10 lg:mb-20">
         <ServiceCard
@@ -100,11 +101,12 @@ const HomePage = () => {
         title="Top Sellers"
         tagline="Browse our top-selling products"
         products={topProducts}
+        classname="container pt-12 pb-2 text-center"
       />
       <div className="flex justify-center">
         <Button classname="bg-accent text-white">SHOP NOW</Button>
       </div>
-      <Footer />
+      <Footer mt="mt-12" />
     </div>
   );
 };

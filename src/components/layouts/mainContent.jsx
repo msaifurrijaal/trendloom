@@ -4,15 +4,16 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 const MainContent = (props) => {
-  const { title, tagline, products } = props;
+  const { title, tagline, products, classname, countSkel = 4 } = props;
   return (
-    <div className="container pt-12 pb-2 text-center">
-      <h1 className="font-bold text-4xl">{title}</h1>
-      <p className="text-base mt-3">{tagline}</p>
-
-      <div className="w-full px-4 mt-14 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
+    <div className={classname}>
+      {title && <h1 className="font-bold text-4xl">{title}</h1>}
+      {tagline && <p className="text-base mt-3">{tagline}</p>}
+      <div
+        className={`w-full px-4 mt-14 flex flex-wrap justify-center xl:mx-auto`}
+      >
         {products.length < 1
-          ? [...Array(4)].map((_, index) => (
+          ? [...Array(countSkel)].map((_, index) => (
               <div
                 className="w-full sm:w-1/2 lg:w-1/4 px-3 sm:px-8 mb-8"
                 key={index}

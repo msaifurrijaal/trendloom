@@ -1,8 +1,9 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = (props) => {
+  const { mt = "" } = props;
   return (
-    <footer className="bg-slate-50 pt-14 mt-12">
+    <footer className={`bg-slate-50 pt-14 ${mt}`} >
       <div className="container">
         <div className="flex flex-wrap">
           <div className="mb-8 w-full px-4 font-medium md:w-1/3">

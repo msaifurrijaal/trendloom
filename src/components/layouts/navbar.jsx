@@ -55,9 +55,9 @@ const Navbar = () => {
       <div className="container">
         <div className="flex items-center justify-between relative">
           <div className="px-4">
-            <a href="#home" className="flex items-center py-2">
+            <Link to="/" className="flex items-center py-2">
               <p className="font-bold text-lg text-primary">TrendLoom</p>
-            </a>
+            </Link>
           </div>
           <div className="flex items-center px-4">
             <button
@@ -77,7 +77,7 @@ const Navbar = () => {
               <ul className="block md:flex items-center">
                 <li className="group">
                   <Link
-                    href="#home"
+                    to="/"
                     className="font-medium text-base text-dark py-2 mx-8 flex group-hover:text-blue-700"
                   >
                     Home
@@ -85,7 +85,7 @@ const Navbar = () => {
                 </li>
                 <li className="group">
                   <Link
-                    href="#project"
+                    to="/products"
                     className="font-medium text-base text-dark py-2 mx-8 flex group-hover:text-blue-700"
                   >
                     Products
@@ -93,7 +93,7 @@ const Navbar = () => {
                 </li>
                 <li className="group ">
                   <Link
-                    href="#about"
+                    to="/about"
                     className="font-medium text-base text-dark py-2 mx-8 flex group-hover:text-blue-700 "
                   >
                     About

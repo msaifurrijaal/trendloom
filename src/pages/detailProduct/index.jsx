@@ -22,7 +22,7 @@ const DetailProductPage = () => {
   return (
     <div>
       <Navbar />
-      <div className="container flex flex-wrap py-6">
+      <div className="container flex flex-wrap pt-6 pb-20">
         <div className="w-full sm:w-2/5 px-4 lg:px-0 flex justify-center">
           {product ? (
             <img
@@ -78,7 +78,7 @@ const DetailProductPage = () => {
           )}
         </div>
       </div>
-      <Footer />
+      <Footer mt="mt-12" />
     </div>
   );
 };
