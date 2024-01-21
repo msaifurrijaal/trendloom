@@ -50,7 +50,8 @@ const ContactPage = () => {
               </label>
               <textarea
                 type="text"
-                id="text"
+                id="message"
+                name="message"
                 placeholder="Please enter your message"
                 className="h-32 w-full border border-secondary p-3 text-dark mt-2 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
               ></textarea>

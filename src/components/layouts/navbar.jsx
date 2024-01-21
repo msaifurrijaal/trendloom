@@ -2,13 +2,16 @@ import { faCartShopping, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useIsUserLogin } from "../../context/isLogin";
 
 const Navbar = () => {
   const headerRef = useRef(null);
   const hamburgerRef = useRef(null);
   const navMenuRef = useRef(null);
+  const { isUserLogin } = useIsUserLogin();
 
   useEffect(() => {
+    console.log(isUserLogin);
     const handleScroll = () => {
       const header = headerRef.current;
       const fixNav = header.offsetTop;
@@ -46,6 +49,11 @@ const Navbar = () => {
       window.removeEventListener("click", handleToggle);
     };
   }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/login";
+  };
 
   return (
     <header
@@ -108,31 +116,54 @@ const Navbar = () => {
                     Contact
                   </Link>
                 </li>
-                <li className="group">
-                  <Link
-                    href="#contact"
-                    className="font-medium text-base text-dark py-2 mx-8 flex"
-                  >
-                    <FontAwesomeIcon
-                      icon={faUser}
-                      style={{ color: "#000000" }}
-                    />
-                  </Link>
-                </li>
-                <li className="group">
-                  <Link
-                    href="#contact"
-                    className="font-medium text-base text-dark py-2 mx-8 flex"
-                  >
-                    <div>
+                {isUserLogin && (
+                  <li className="group">
+                    <Link
+                      href="#contact"
+                      className="font-medium text-base text-dark py-2 mx-8 md:mx-2 flex"
+                    >
                       <FontAwesomeIcon
-                        icon={faCartShopping}
+                        icon={faUser}
                         style={{ color: "#000000" }}
                       />
-                      <p className="ms-1 inline-block">0</p>
-                    </div>
-                  </Link>
-                </li>
+                    </Link>
+                  </li>
+                )}
+                {isUserLogin && (
+                  <li className="group">
+                    <Link
+                      href="#contact"
+                      className="font-medium text-base text-dark py-2 mx-8 md:mx-2 flex"
+                    >
+                      <div>
+                        <FontAwesomeIcon
+                          icon={faCartShopping}
+                          style={{ color: "#000000" }}
+                        />
+                        <p className="ms-1 inline-block">0</p>
+                      </div>
+                    </Link>
+                  </li>
+                )}
+                {isUserLogin ? (
+                  <li className="group">
+                    <Link
+                      onClick={handleLogout}
+                      className="font-medium text-base bg-dark text-white py-1 px-4 mx-8 md:mx-2 flex-auto"
+                    >
+                      Logout
+                    </Link>
+                  </li>
+                ) : (
+                  <li className="group">
+                    <Link
+                      to="/login"
+                      className="font-medium text-base bg-dark text-white py-1 px-4 mx-8 md:mx-2 flex-auto"
+                    >
+                      Login
+                    </Link>
+                  </li>
+                )}
               </ul>
             </nav>
           </div>

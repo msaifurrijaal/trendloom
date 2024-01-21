@@ -8,16 +8,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../components/elements/button";
 import Footer from "../../components/layouts/Footer";
+import { useCart, useCartDispatch } from "../../context/cartContext";
+import { useIsUserLogin } from "../../context/isLogin";
 
 const DetailProductPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState();
+  const cart = useCart();
+  const cartDispatch = useCartDispatch();
+  const { isUserLogin } = useIsUserLogin();
 
   useEffect(() => {
     getDetailProduct(id, (data) => {
       setProduct(data);
     });
   }, []);
+
+  const addToCart = (id, qty) => {
+    if (isUserLogin) {
+      cartDispatch({ type: "ADD_TO_CART", payload: { id: id, qty: qty } });
+    } else {
+      window.location.href = "/login";
+    }
+  };
 
   return (
     <div>
@@ -58,7 +71,10 @@ const DetailProductPage = () => {
                 $ {product.price}
               </p>
               <p className="text-base mt-4">{product.description}</p>
-              <Button classname="bg-accent text-white mt-6 lg:mt-12">
+              <Button
+                classname="bg-accent text-white mt-6 lg:mt-12"
+                onClick={() => addToCart(product.id, 1)}
+              >
                 ADD TO CART
               </Button>
               <p className="text-base mt-4">
