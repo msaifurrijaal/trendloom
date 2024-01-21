@@ -102,7 +102,7 @@ const Navbar = () => {
 
                 <li className="group">
                   <Link
-                    href="#contact"
+                    to="/contact"
                     className="font-medium text-base text-dark py-2 mx-8 flex group-hover:text-blue-700"
                   >
                     Contact

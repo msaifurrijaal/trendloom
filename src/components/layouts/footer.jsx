@@ -10,7 +10,7 @@ const Footer = (props) => {
             <h2 className="mb-5 text-4xl font-bold text-dark">TrendLoom</h2>
             <h3 className="mb-2 text-2xl font-bold">Contact Us</h3>
             <p>trendloom@gmail.com</p>
-            <p>Jakarta, Indonesia</p>
+            <p>Malang, Indonesia</p>
           </div>
           <div className="mb-8 w-full px-4 md:w-1/3">
             <h3 className="mb-5 text-xl font-semibold text-dark">Help Links</h3>

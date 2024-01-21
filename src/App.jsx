@@ -3,6 +3,8 @@ import HomePage from "./pages/home";
 import DetailProductPage from "./pages/detailProduct";
 import ProductsPage from "./pages/products";
 import AboutPage from "./pages/about";
+import ContactPage from "./pages/contact";
+import LoginPage from "./pages/login";
 
 function App() {
   const router = createBrowserRouter([
@@ -21,6 +23,14 @@ function App() {
     {
       path: "/about",
       element: <AboutPage />,
+    },
+    {
+      path: "/contact",
+      element: <ContactPage />,
+    },
+    {
+      path: "/login",
+      element: <LoginPage />,
     },
   ]);
 
