@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "../../components/layouts/Navbar";
 import Button from "../../components/elements/button";
 import InputForm from "../../components/elements/input";
 import Footer from "../../components/layouts/Footer";
+import Navbar from "../../components/layouts/Navbar";
 
 const ContactPage = () => {
   return (
