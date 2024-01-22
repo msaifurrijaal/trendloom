@@ -44,6 +44,7 @@ const CartPage = () => {
   useEffect(() => {
     const totalQty = cart.reduce((total, item) => total + item.qty, 0);
     setTotalCart(totalQty);
+    localStorage.setItem("totalCart", totalQty);
   }, [cart]);
 
   const addToCart = (id, qty) => {

@@ -36,8 +36,10 @@ const cartReducer = (state, action) => {
         if (updatedCart[existingCartItemIndex].qty === 0) {
           updatedCart.splice(existingCartItemIndex, 1);
         }
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
         return updatedCart;
       } else {
+        localStorage.setItem("cart", JSON.stringify(state));
         return state;
       }
     }
