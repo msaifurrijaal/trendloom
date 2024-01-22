@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../components/layouts/navbar";
+import Navbar from "../../components/layouts/Navbar";
 import { useParams } from "react-router-dom";
 import { getDetailProduct } from "../../services/product.service";
 import Skeleton from "react-loading-skeleton";

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import Navbar from "../../components/layouts/navbar";
-import AuthLayout from "../../components/layouts/auth";
+import Navbar from "../../components/layouts/Navbar";
+import AuthLayout from "../../components/layouts/Auth";
 import InputForm from "../../components/elements/input";
 import Button from "../../components/elements/button";
 import { login } from "../../services/auth.service";

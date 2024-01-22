@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../components/layouts/navbar";
-import Hero from "../../components/layouts/hero";
-import MainContent from "../../components/layouts/mainContent";
+import Navbar from "../../components/layouts/Navbar";
+import Hero from "../../components/layouts/Hero";
+import MainContent from "../../components/layouts/MainContent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRotateLeft,
