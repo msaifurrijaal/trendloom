@@ -3,15 +3,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useIsUserLogin } from "../../context/isLogin";
+import { useTotalCart } from "../../context/totalCartContext";
 
 const Navbar = () => {
   const headerRef = useRef(null);
   const hamburgerRef = useRef(null);
   const navMenuRef = useRef(null);
   const { isUserLogin } = useIsUserLogin();
+  const { totalCart } = useTotalCart();
 
   useEffect(() => {
-    console.log(isUserLogin);
     const handleScroll = () => {
       const header = headerRef.current;
       const fixNav = header.offsetTop;
@@ -140,7 +141,7 @@ const Navbar = () => {
                           icon={faCartShopping}
                           style={{ color: "#000000" }}
                         />
-                        <p className="ms-1 inline-block">0</p>
+                        <p className="ms-1 inline-block">{totalCart}</p>
                       </div>
                     </Link>
                   </li>

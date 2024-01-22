@@ -5,6 +5,7 @@ import { getProducts } from "../../services/product.service";
 import Button from "../../components/elements/button";
 import Footer from "../../components/layouts/Footer";
 import { useLogin } from "../../hooks/useLogin";
+import { useTotalCart } from "../../context/totalCartContext";
 
 const CartPage = () => {
   useLogin();
@@ -13,6 +14,7 @@ const CartPage = () => {
   const [totalPrice, setTotalPrice] = useState();
   const cart = useCart();
   const cartDispatch = useCartDispatch();
+  const { setTotalCart } = useTotalCart();
 
   useEffect(() => {
     getProducts((response) => {
@@ -38,6 +40,11 @@ const CartPage = () => {
       setTotalPrice(sum);
     }
   }, [products, cart]);
+
+  useEffect(() => {
+    const totalQty = cart.reduce((total, item) => total + item.qty, 0);
+    setTotalCart(totalQty);
+  }, [cart]);
 
   const addToCart = (id, qty) => {
     cartDispatch({ type: "ADD_TO_CART", payload: { id: id, qty: qty } });

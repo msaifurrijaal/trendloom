@@ -10,12 +10,15 @@ import Button from "../../components/elements/button";
 import Footer from "../../components/layouts/Footer";
 import { useCart, useCartDispatch } from "../../context/cartContext";
 import { useIsUserLogin } from "../../context/isLogin";
+import { useTotalCart } from "../../context/totalCartContext";
 
 const DetailProductPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState();
+  const cart = useCart();
   const cartDispatch = useCartDispatch();
   const { isUserLogin } = useIsUserLogin();
+  const { setTotalCart } = useTotalCart();
 
   useEffect(() => {
     getDetailProduct(id, (data) => {
@@ -30,6 +33,11 @@ const DetailProductPage = () => {
       window.location.href = "/login";
     }
   };
+
+  useEffect(() => {
+    const totalQty = cart.reduce((total, item) => total + item.qty, 0);
+    setTotalCart(totalQty);
+  }, [cart]);
 
   return (
     <div>

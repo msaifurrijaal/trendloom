@@ -7,8 +7,9 @@ import ContactPage from "./pages/contact";
 import LoginPage from "./pages/login";
 import RegisterPage from "./pages/register";
 import { IsLoginContextProvider } from "./context/isLogin";
-import { CartProvider } from "./context/cartContext";
+import { CartContextProvider } from "./context/cartContext";
 import CartPage from "./pages/cart";
+import { TotalCartContextProvider } from "./context/totalCartContext";
 
 function App() {
   const router = createBrowserRouter([
@@ -49,9 +50,11 @@ function App() {
   return (
     <>
       <IsLoginContextProvider>
-        <CartProvider>
-          <RouterProvider router={router} />
-        </CartProvider>
+        <CartContextProvider>
+          <TotalCartContextProvider>
+            <RouterProvider router={router} />
+          </TotalCartContextProvider>
+        </CartContextProvider>
       </IsLoginContextProvider>
     </>
   );

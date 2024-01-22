@@ -47,7 +47,7 @@ const cartReducer = (state, action) => {
   }
 };
 
-export function CartProvider({ children }) {
+export function CartContextProvider({ children }) {
   const storedCart = localStorage.getItem("cart");
   const [cart, dispatch] = useReducer(
     cartReducer,
