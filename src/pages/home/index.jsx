@@ -11,9 +11,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import ServiceCard from "../../components/elements/serviceCard";
 import Button from "../../components/elements/button";
-import Footer from "../../components/layouts/Footer";
 import CampaignCard from "../../components/elements/campaignCard";
 import { getLimitProducts, getProducts } from "../../services/product.service";
+import Footer from "../../components/layouts/Footer";
 
 const HomePage = () => {
   const [newProducts, setNewProducts] = useState([]);
