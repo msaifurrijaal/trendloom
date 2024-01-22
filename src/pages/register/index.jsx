@@ -1,6 +1,6 @@
 import React from "react";
-import AuthLayout from "../../components/layouts/auth";
-import Navbar from "../../components/layouts/navbar";
+import AuthLayout from "../../components/layouts/Auth";
+import Navbar from "../../components/layouts/Navbar";
 import InputForm from "../../components/elements/input";
 
 const RegisterPage = () => {

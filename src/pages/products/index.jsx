@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../components/layouts/navbar";
+import Navbar from "../../components/layouts/Navbar";
 import { getProducts, getProductsByCat } from "../../services/product.service";
-import MainContent from "../../components/layouts/mainContent";
+import MainContent from "../../components/layouts/MainContent";
 import Footer from "../../components/layouts/Footer";
 
 const ProductsPage = () => {
