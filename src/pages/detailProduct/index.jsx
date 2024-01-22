@@ -7,10 +7,10 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../components/elements/button";
-import Footer from "../../components/layouts/Footer";
 import { useCart, useCartDispatch } from "../../context/cartContext";
 import { useIsUserLogin } from "../../context/isLogin";
 import { useTotalCart } from "../../context/totalCartContext";
+import Footer from "../../components/layouts/Footer";
 
 const DetailProductPage = () => {
   const { id } = useParams();

@@ -3,9 +3,9 @@ import Navbar from "../../components/layouts/navbar";
 import { useCart, useCartDispatch } from "../../context/cartContext";
 import { getProducts } from "../../services/product.service";
 import Button from "../../components/elements/button";
-import Footer from "../../components/layouts/Footer";
 import { useLogin } from "../../hooks/useLogin";
 import { useTotalCart } from "../../context/totalCartContext";
+import Footer from "../../components/layouts/Footer";
 
 const CartPage = () => {
   useLogin();
