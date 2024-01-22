@@ -8,6 +8,7 @@ import LoginPage from "./pages/login";
 import RegisterPage from "./pages/register";
 import { IsLoginContextProvider } from "./context/isLogin";
 import { CartProvider } from "./context/cartContext";
+import CartPage from "./pages/cart";
 
 function App() {
   const router = createBrowserRouter([
@@ -38,6 +39,10 @@ function App() {
     {
       path: "/register",
       element: <RegisterPage />,
+    },
+    {
+      path: "/cart",
+      element: <CartPage />,
     },
   ]);
 

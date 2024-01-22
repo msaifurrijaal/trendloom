@@ -9,8 +9,12 @@ const ProductsPage = () => {
   const [category, setCategory] = useState("All Category");
 
   useEffect(() => {
-    getProducts((data) => {
-      setProducts(data);
+    getProducts((response) => {
+      if (response.success) {
+        setProducts(response.data);
+      } else {
+        alert(`Error: ${response.error}`);
+      }
     });
   }, []);
 

@@ -4,10 +4,18 @@ export const getProducts = (callback) => {
   axios
     .get("https://fakestoreapi.com/products")
     .then((res) => {
-      callback(res.data);
+      const response = {
+        success: true,
+        data: res.data,
+      };
+      callback(response);
     })
     .catch((err) => {
-      console.log(err);
+      const response = {
+        success: false,
+        error: err.message,
+      };
+      callback(response);
     });
 };
 
@@ -15,10 +23,18 @@ export const getLimitProducts = (limit, callback) => {
   axios
     .get("https://fakestoreapi.com/products?limit=" + limit)
     .then((res) => {
-      callback(res.data);
+      const response = {
+        success: true,
+        data: res.data,
+      };
+      callback(response);
     })
     .catch((err) => {
-      console.log(err);
+      const response = {
+        success: false,
+        error: err.message,
+      };
+      callback(response);
     });
 };
 

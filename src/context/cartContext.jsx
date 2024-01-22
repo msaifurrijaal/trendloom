@@ -10,15 +10,18 @@ const cartReducer = (state, action) => {
       const existingCartItemIndex = state.findIndex(
         (item) => item.id === action.payload.id
       );
-      console.log(existingCartItemIndex);
-      console.log(state);
       if (existingCartItemIndex !== -1) {
         const updatedCart = [...state];
         updatedCart[existingCartItemIndex].qty += action.payload.qty;
-        console.log(updatedCart);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
         return updatedCart;
       } else {
-        return [...state, { id: action.payload.id, qty: action.payload.qty }];
+        const updatedCart = [
+          ...state,
+          { id: action.payload.id, qty: action.payload.qty },
+        ];
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+        return updatedCart;
       }
     }
     case "REMOVE_FROM_CART": {
@@ -45,7 +48,11 @@ const cartReducer = (state, action) => {
 };
 
 export function CartProvider({ children }) {
-  const [cart, dispatch] = useReducer(cartReducer, []);
+  const storedCart = localStorage.getItem("cart");
+  const [cart, dispatch] = useReducer(
+    cartReducer,
+    storedCart ? JSON.parse(storedCart) : []
+  );
   return (
     <CartContext.Provider value={cart}>
       <CartDispatchContext.Provider value={dispatch}>

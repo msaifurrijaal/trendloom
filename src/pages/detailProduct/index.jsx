@@ -14,7 +14,6 @@ import { useIsUserLogin } from "../../context/isLogin";
 const DetailProductPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState();
-  const cart = useCart();
   const cartDispatch = useCartDispatch();
   const { isUserLogin } = useIsUserLogin();
 

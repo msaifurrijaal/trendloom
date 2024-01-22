@@ -20,12 +20,20 @@ const HomePage = () => {
   const [topProducts, setTopProducts] = useState([]);
 
   useEffect(() => {
-    getLimitProducts(8, (data) => {
-      setNewProducts(data);
+    getLimitProducts(8, (response) => {
+      if (response.success) {
+        setNewProducts(response.data);
+      } else {
+        alert(`Error: ${response.error}`);
+      }
     });
 
-    getLimitProducts(4, (data) => {
-      setTopProducts(data);
+    getLimitProducts(4, (response) => {
+      if (response.success) {
+        setTopProducts(response.data);
+      } else {
+        alert(`Error: ${response.error}`);
+      }
     });
   }, []);
 

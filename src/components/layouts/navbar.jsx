@@ -132,7 +132,7 @@ const Navbar = () => {
                 {isUserLogin && (
                   <li className="group">
                     <Link
-                      href="#contact"
+                      to="/cart"
                       className="font-medium text-base text-dark py-2 mx-8 md:mx-2 flex"
                     >
                       <div>
