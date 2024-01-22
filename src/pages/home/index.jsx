@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../components/layouts/Navbar";
 import Hero from "../../components/layouts/Hero";
-import MainContent from "../../components/layouts/MainContent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRotateLeft,
@@ -12,7 +10,9 @@ import {
 import ServiceCard from "../../components/elements/serviceCard";
 import Button from "../../components/elements/button";
 import CampaignCard from "../../components/elements/campaignCard";
-import { getLimitProducts, getProducts } from "../../services/product.service";
+import { getLimitProducts } from "../../services/product.service";
+import Navbar from "../../components/layouts/Navbar";
+import MainContent from "../../components/layouts/MainContent";
 import Footer from "../../components/layouts/Footer";
 
 const HomePage = () => {

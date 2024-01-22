@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../components/layouts/Navbar";
 import { useCart, useCartDispatch } from "../../context/cartContext";
 import { getProducts } from "../../services/product.service";
 import Button from "../../components/elements/button";
 import { useLogin } from "../../hooks/useLogin";
 import { useTotalCart } from "../../context/totalCartContext";
+import Navbar from "../../components/layouts/Navbar";
 import Footer from "../../components/layouts/Footer";
 
 const CartPage = () => {

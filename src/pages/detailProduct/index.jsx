@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../components/layouts/Navbar";
 import { useParams } from "react-router-dom";
 import { getDetailProduct } from "../../services/product.service";
 import Skeleton from "react-loading-skeleton";
@@ -10,6 +9,7 @@ import Button from "../../components/elements/button";
 import { useCart, useCartDispatch } from "../../context/cartContext";
 import { useIsUserLogin } from "../../context/isLogin";
 import { useTotalCart } from "../../context/totalCartContext";
+import Navbar from "../../components/layouts/Navbar";
 import Footer from "../../components/layouts/Footer";
 
 const DetailProductPage = () => {

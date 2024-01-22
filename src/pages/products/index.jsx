@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../components/layouts/Navbar";
 import { getProducts, getProductsByCat } from "../../services/product.service";
+import Navbar from "../../components/layouts/Navbar";
 import MainContent from "../../components/layouts/MainContent";
 import Footer from "../../components/layouts/Footer";
 
