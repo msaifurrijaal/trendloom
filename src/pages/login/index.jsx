@@ -4,8 +4,11 @@ import Button from "../../components/elements/button";
 import { login } from "../../services/auth.service";
 import Navbar from "../../components/layouts/Navbar";
 import AuthLayout from "../../components/layouts/Auth";
+import { useDoneLogin } from "../../hooks/useLogin";
 
 const LoginPage = () => {
+  useDoneLogin();
+
   const [loginFailed, setLoginFailed] = useState("");
   const handleLogin = (event) => {
     event.preventDefault();

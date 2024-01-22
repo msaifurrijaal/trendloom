@@ -2,8 +2,10 @@ import React from "react";
 import Navbar from "../../components/layouts/Navbar";
 import AuthLayout from "../../components/layouts/Auth";
 import InputForm from "../../components/elements/input";
+import { useDoneLogin } from "../../hooks/useLogin";
 
 const RegisterPage = () => {
+  useDoneLogin();
 return (
     <div className="min-h-screen flex flex-col">
       <Navbar />

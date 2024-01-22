@@ -10,3 +10,13 @@ export const useLogin = () => {
     }
   }, []);
 };
+
+export const useDoneLogin = () => {
+  const { isUserLogin } = useIsUserLogin();
+
+  useEffect(() => {
+    if (isUserLogin) {
+      window.location.href = "/";
+    }
+  }, []);
+}
