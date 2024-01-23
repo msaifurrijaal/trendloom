@@ -5,13 +5,16 @@ import { login } from "../../services/auth.service";
 import Navbar from "../../components/layouts/Navbar";
 import AuthLayout from "../../components/layouts/Auth";
 import { useDoneLogin } from "../../hooks/useLogin";
+import Loading from "../../components/elements/loading";
 
 const LoginPage = () => {
   useDoneLogin();
 
   const [loginFailed, setLoginFailed] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const handleLogin = (event) => {
     event.preventDefault();
+    setIsLoading(true);
 
     const data = {
       username: event.target.username.value,
@@ -20,8 +23,9 @@ const LoginPage = () => {
     login(data, (status, res) => {
       if (status) {
         localStorage.setItem("token", res);
-        window.location.href = "/products";
+        window.location.href = "/";
       } else {
+        setIsLoading(false);
         setLoginFailed(res.response.data);
         console.log(res.response.data);
       }
@@ -65,6 +69,7 @@ const LoginPage = () => {
         {loginFailed && (
           <p className="text-red-500 text-center mt-5">{loginFailed}</p>
         )}
+        {isLoading && <Loading />}
       </AuthLayout>
     </div>
   );
