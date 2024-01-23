@@ -19,15 +19,23 @@ const ProductsPage = () => {
   }, []);
 
   const handleAllProduct = () => {
-    getProducts((data) => {
-      setProducts(data);
+    getProducts((response) => {
+      if (response.success) {
+        setProducts(response.data);
+      } else {
+        alert(`Error: ${response.error}`);
+      }
     });
     setCategory("All Category");
   };
 
   const handleProductByCat = (cat, title) => {
-    getProductsByCat(cat, (data) => {
-      setProducts(data);
+    getProductsByCat(cat, (response) => {
+      if (response.success) {
+        setProducts(response.data);
+      } else {
+        alert(`Error: ${response.error}`);
+      }
     });
     setCategory(title);
   };

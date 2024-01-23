@@ -42,10 +42,18 @@ export const getDetailProduct = (id, callback) => {
   axios
     .get(`https://fakestoreapi.com/products/${id}`)
     .then((res) => {
-      callback(res.data);
+      const response = {
+        success: true,
+        data: res.data,
+      };
+      callback(response);
     })
     .catch((err) => {
-      console.log(err);
+      const response = {
+        success: false,
+        error: err.message,
+      };
+      callback(response);
     });
 };
 
@@ -54,9 +62,17 @@ export const getProductsByCat = (cat, callback) => {
   axios
     .get(`https://fakestoreapi.com/products/category/${cat}`)
     .then((res) => {
-      callback(res.data);
+      const response = {
+        success: true,
+        data: res.data,
+      };
+      callback(response);
     })
     .catch((err) => {
-      console.log(err);
+      const response = {
+        success: false,
+        error: err.message,
+      }
+      callback(response)
     });
 };

@@ -21,8 +21,12 @@ const DetailProductPage = () => {
   const { setTotalCart } = useTotalCart();
 
   useEffect(() => {
-    getDetailProduct(id, (data) => {
-      setProduct(data);
+    getDetailProduct(id, (response) => {
+      if (response.success) {
+        setProduct(response.data);
+      } else {
+        alert(`Error: ${response.error}`);
+      }
     });
   }, []);
 
