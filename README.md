@@ -5,13 +5,13 @@ TrendLoom merupakan website ecommerce yang menawarkan produk fashion dan alat ke
 ## Instalasi Lokal 🖥️
 Untuk menjalankan TrendLoom pada mesin lokal, ikuti langkah-langkah berikut: 
 
-1. Clone repository Teratour dari Github
+1. Clone repository TrendLoom dari Github
 
 ~~~bash  
   git clone https://github.com/msaifurrijaal/trendloom.git
 ~~~
 
-2. Masuk ke directory Teratour
+2. Masuk ke directory TrendLoom
 
 ~~~bash  
   cd trendloom
@@ -29,7 +29,7 @@ Untuk menjalankan TrendLoom pada mesin lokal, ikuti langkah-langkah berikut:
   npm run dev
 ~~~
 
-5. Buka browser dan akses http://localhost:5173 untuk melihat aplikasi Teratour.
+5. Buka browser dan akses http://localhost:5173 untuk melihat aplikasi TrendLoom.
 6. Login menggunakan username: johnd | password: m38rmF$ atau dapatkan data user dengan mengakses https://fakestoreapi.com/users (fakestoreapi)
 
 ## Fitur 📝
